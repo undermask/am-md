@@ -1,0 +1,368 @@
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Amaze UI 插件</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+  <link rel="icon" type="image/png"
+        href="http://s.amazeui.org/assets/2.x/i/favicon.png">
+  <link rel="stylesheet"
+        href="http://cdn.amazeui.org/amazeui/2.7.0/css/amazeui.min.css">
+  <link rel="stylesheet" href="http://s.amazeui.org/assets/plugin/css/app.min.css">
+  <!--[if (gte IE 9)|!(IE)]><!-->
+  <script src="http://cdn.amazeui.org/jquery/2.1.4/jquery.min.js"></script>
+  <script src="http://cdn.amazeui.org/amazeui/2.7.0/js/amazeui.min.js"></script>
+  <!--<![endif]-->
+  <link rel="stylesheet" href="css/am-md.css">
+</head>
+<body class="am-plugin">
+<!--[if lte IE 8 ]>
+<div class="am-alert am-alert">
+  不支持你使用的浏览器，<a href="http://browsehappy.com/?locale=zh" target="_blank">请升级。</a>
+</div>
+<![endif]-->
+<header class="am-topbar am-topbar-inverse">
+  <div class="am-container">
+    <h1 class="am-topbar-brand">
+      <a href="http://amazeui.org" class="am-text-ir">Amaze UI</a>
+      <span class="am-badge am-badge-danger">Plugin</span>
+    </h1>
+  </div>
+</header>
+<section class="amp-banner">
+  <div class="am-container">
+    <h1>am-md</h1>
+    <p class="">使用 Amaze UI 样式风格的 markdown 插件。</p>
+  </div>
+</section>
+
+<section class="amp-main">
+  <div class="am-container amp-content">
+    <h2><a name="shi-yong" class="anchor" href="#shi-yong"><span class="header-link"></span></a>使用</h2><h3><a name="1data-api" class="anchor" href="#1data-api"><span class="header-link"></span></a>1:data-api</h3><p>在textarea 添加 data-am-md</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">&lt;textarea data-am-md&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span></span></code></pre></div><div class="doc-example"><textarea data-am-md>
+> 引用：Amaze ~ 妹子 UI -- 中国首个开源 HTML5 跨屏前端框架
+
+# 使用 # 设置标题
+
+- # 表示一级标题
+- ## 表示二级标题
+- ### 表示三级标题
+
+**加粗：Amaze UI 面向 HTML5 开发，使用 CSS3 来做动画交互，平滑、高效，更适合移动设备，让 Web 应用更快速载入。**
+
+_斜体：Amaze UI 以移动优先（Mobile first）为理念，从小屏逐步扩展到大屏，最终实现所有屏幕适配，适应移动互联潮流。_
+
+[我是链接：amazeui](http://amazeui.org)
+
+![我是图片](http://s.amazeui.org/assets/2.x/i/ui/mascot.png "输入图片标题")
+
+- 我是列表
+- Amaze UI 以移动优先（Mobile first）为理念
+- 从小屏逐步扩展到大屏
+- 最终实现所有屏幕适配，适应移动互联潮流</textarea></div><h3><a name="2data-api" class="anchor" href="#2data-api"><span class="header-link"></span></a>2:data-api</h3><div class="doc-code demo-highlight"><pre><code class="javascript">&lt;div data-provide="am-md-editable"&gt;
+  &lt;h3&gt;amazeui 啦啦啦啦阿拉啦&lt;/h3&gt;
+  &lt;p&gt;通过 "data-provide = am-md-editable" 调用MD编辑器&lt;/p&gt;
+&lt;/div&gt;</code></pre></div><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">data-provide</span>=<span class="hljs-string">"am-md-editable"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>amazeui 啦啦啦啦阿拉啦<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>通过 "data-provide = am-md-editable" 调用MD编辑器<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div><h3><a name="3-js" class="anchor" href="#3-js"><span class="header-link"></span></a>3: JS</h3><p>通过JS调用: $(&#39;selection&#39;).markdown(options)</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">"#some-textarea"</span>).markdown()</code></pre></div><h2><a name="can-shu-shuo-ming-" class="anchor" href="#can-shu-shuo-ming-"><span class="header-link"></span></a>参数说明：</h2><table class="am-table am-table-bordered am-table-striped">
+  <colgroup>
+    <col class="span1">
+    <col class="span7">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>参数名</th>
+      <th>类型</th>
+      <th>参数描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>autofocus</code>
+      </td>
+      <td><code>boolean</code></td>
+      <td>编辑器实例化后自动focus。 默认 <code>false</code></td>
+    </tr>
+    <tr>
+      <td>
+        <code>savable</code>
+      </td>
+      <td><code>boolean</code></td>
+      <td>是否在底部添加保存按钮。默认为 <code>false</code></td>
+    </tr>
+    <tr>
+      <td>
+        <code>hideable</code>
+      </td>
+      <td><code>boolean</code></td>
+      <td>设置为 <code>true</code>在<code>blur</code> 事件后，编辑器会隐藏 。 默认 <code>false</code></td>
+    </tr>
+    <tr>
+      <td>
+        <code>width</code>
+      </td>
+      <td><code>mixed</code></td>
+      <td>编辑器宽度。默认 <code>inherit</code></td>
+    </tr>
+    <tr>
+      <td>
+        <code>height</code>
+      </td>
+      <td><code>mixed</code></td>
+      <td>编辑器高度。默认 <code>inherit</code></td>
+    </tr>
+    <tr>
+      <td>
+        <code>resize</code>
+      </td>
+      <td><code>string</code></td>
+      <td>编辑器大小改变。 <code>none</code>,<code>both</code>,<code>horizontal</code>,<code>vertical</code>. 默认 <code>none</code>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <code>footer</code>
+      </td>
+      <td><code>mixed</code></td>
+      <td>编辑器底部DOM。默认为空，即不设置</td>
+    </tr>
+
+    <tr>
+      <td>
+        <code>fullscreen</code>
+      </td>
+      <td><code>object</code></td>
+      <td>是否允许全屏： <code>enable</code> (<code>bool</code>)；改变图标： <code>icons</code> (<code>object</code>) </td>
+    </tr>
+
+
+    <tr>
+      <td>
+        <code>hiddenButtons</code>
+      </td>
+      <td><code>mixed</code></td>
+      <td>隐藏默认的按钮：单个为字符串，多个为数组</td>
+    </tr>
+
+    <tr>
+      <td>
+        <code>disabledButtons</code>
+      </td>
+      <td><code>mixed</code></td>
+      <td>禁用默认的按钮：单个为字符串，多个为数组</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2><a name="shi-li-" class="anchor" href="#shi-li-"><span class="header-link"></span></a>示例：</h2><h3><a name="zi-ding-yi-bian-ji-qi-kuan-du-he-gao-du" class="anchor" href="#zi-ding-yi-bian-ji-qi-kuan-du-he-gao-du"><span class="header-link"></span></a>自定义编辑器宽度和高度</h3><pre>&lt;textarea data-am-md data-width=&quot;800&quot; data-height=&quot;300&quot;&gt;&lt;/textarea&gt;</pre><div class="doc-example"><textarea data-am-md data-width="800" data-height="300"></textarea></div><h3><a name="tian-jia-bao-cun-an-niu" class="anchor" href="#tian-jia-bao-cun-an-niu"><span class="header-link"></span></a>添加保存按钮</h3><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">data-am-md</span> <span class="hljs-attr">data-savable</span>=<span class="hljs-string">"true"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span></code></pre></div><div class="doc-example"><textarea data-am-md data-savable="true"></textarea></div><h3><a name="tian-jia-dom" class="anchor" href="#tian-jia-dom"><span class="header-link"></span></a>添加DOM</h3><div class="doc-code demo-highlight"><pre><code class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">data-am-md</span> <span class="hljs-attr">data-footer</span>=<span class="hljs-string">"&lt;h1&gt;aaa&lt;/h1&gt;"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span></code></pre></div><div class="doc-example"><textarea data-am-md data-footer="<h1>我是添加的</h1>"></textarea></div><h2><a name="shi-jian-jie-kou" class="anchor" href="#shi-jian-jie-kou"><span class="header-link"></span></a>事件接口</h2><p>6个勾子函数与编辑器整个生命周期挂钩：</p>
+<ul>
+<li>onShow</li>
+<li>onPreview</li>
+<li>onChange</li>
+<li>onSave</li>
+<li>onFocus</li>
+<li>onBlur</li>
+</ul>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">"#target-editor"</span>).markdown({
+  <span class="hljs-attr">savable</span>:<span class="hljs-literal">true</span>,
+  <span class="hljs-attr">onShow</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+    alert(<span class="hljs-string">"Showing "</span>
+      +e.$textarea.prop(<span class="hljs-string">"tagName"</span>).toLowerCase()
+      +<span class="hljs-string">"#"</span>
+      +e.$textarea.attr(<span class="hljs-string">"id"</span>)
+      +<span class="hljs-string">" as Markdown Editor..."</span>)
+  },
+  <span class="hljs-attr">onPreview</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    <span class="hljs-keyword">var</span> previewContent
+
+    <span class="hljs-keyword">if</span> (e.isDirty()) {
+      <span class="hljs-keyword">var</span> originalContent = e.getContent()
+
+      previewContent = <span class="hljs-string">"Prepended text here..."</span>
+             + <span class="hljs-string">"\n"</span>
+             + originalContent
+             + <span class="hljs-string">"\n"</span>
+             +<span class="hljs-string">"Apended text here..."</span>
+    } <span class="hljs-keyword">else</span> {
+      previewContent = <span class="hljs-string">"Default content"</span>
+    }
+
+    <span class="hljs-keyword">return</span> previewContent
+  },
+  <span class="hljs-attr">onSave</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    alert(<span class="hljs-string">"Saving '"</span>+e.getContent()+<span class="hljs-string">"'..."</span>)
+  },
+  <span class="hljs-attr">onChange</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"Changed!"</span>)
+  },
+  <span class="hljs-attr">onFocus</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    alert(<span class="hljs-string">"Focus triggered!"</span>)
+  },
+  <span class="hljs-attr">onBlur</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+    alert(<span class="hljs-string">"Blur triggered!"</span>)
+  }
+})</code></pre></div><h2><a name="bian-ji-qi-an-niu-zu-she-zhi" class="anchor" href="#bian-ji-qi-an-niu-zu-she-zhi"><span class="header-link"></span></a>编辑器按钮组设置</h2><p>可以修改编辑器按按钮组：包括： 字体、提示信息、图标、回调函数。</p>
+<p>如果需要加入额外的按钮和功能，可以使用 additionalButtons 接口：</p>
+<div class="doc-code demo-highlight"><pre><code class="javascript">$(<span class="hljs-string">"#am-md-bnt"</span>).markdown({
+  <span class="hljs-attr">additionalButtons</span>: [
+    [{
+          <span class="hljs-attr">name</span>: <span class="hljs-string">"groupCustom"</span>,
+          <span class="hljs-attr">data</span>: [{
+            <span class="hljs-attr">name</span>: <span class="hljs-string">"cmdExtra"</span>,
+            <span class="hljs-attr">title</span>: <span class="hljs-string">"extra"</span>,
+            <span class="hljs-attr">btnText</span>: <span class="hljs-string">"我是额外加的"</span>,
+            <span class="hljs-attr">icon</span>: <span class="hljs-string">"am-icon-angellist am-icon-spin am-icon-sm"</span>,  <span class="hljs-comment">// 使用amazeui图标库</span>
+            callback: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>)</span>{
+              alert(<span class="hljs-string">'请在console控制台中查看事件对象'</span>)  <span class="hljs-comment">// 回调函数测试</span>
+              <span class="hljs-built_in">console</span>.log(e)
+            }
+          }]
+    }]
+  ]
+})</code></pre></div><div class="doc-example"><textarea id="am-md-btn"></textarea></div><h2><a name="apis" class="anchor" href="#apis"><span class="header-link"></span></a>APIS</h2><table class="am-table am-table-bordered am-table-striped">
+  <colgroup>
+    <col class="span1">
+    <col class="span7">
+  </colgroup>
+  <thead>
+    <tr>
+      <th>方法</th>
+      <th>具体描述</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>showEditor()</code>
+      </td>
+      <td>设置编辑器可见</td>
+    </tr>
+    <tr>
+      <td>
+        <code>showPreview()</code>
+      </td>
+      <td>进入预览状态</td>
+    </tr>
+    <tr>
+      <td>
+        <code>hidePreview()</code>
+      </td>
+      <td>设置编辑器不可见</td>
+    </tr>
+    <tr>
+      <td>
+        <code>isDirty()</code>
+      </td>
+      <td>获取编辑器数据状态: 返回true表示内容已改变，反之无改变</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getContent()</code>
+      </td>
+      <td>获取编辑区内容（即markdown语法的内容）</td>
+    </tr>
+    <tr>
+      <td>
+        <code>parseContent()</code>
+      </td>
+      <td>获取md解析后的内容</td>
+    </tr>
+    <tr>
+      <td>
+        <code>setContent(<em>string</em> content)</code>
+      </td>
+      <td>设置编辑器内容：字符串</td>
+    </tr>
+    <tr>
+      <td>
+        <code>findSelection(<em>string</em> words)</code>
+      </td>
+      <td>内容检索：输入字符串，返回对象：包括位置、内容等</td>
+    </tr>
+    <tr>
+      <td>
+        <code>getSelection()</code>
+      </td>
+      <td>获取当前鼠标光标选择的内容</td>
+    </tr>
+    <tr>
+      <td>
+        <code>setSelection(<em>int</em> start, <em>int</em> end)</code>
+      </td>
+      <td>编辑器获取内容： <code>start</code> to <code>end</code>.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>replaceSelection(<em>string</em> content)</code>
+      </td>
+      <td>输入字符串替换当前选择的内容</td>
+    </tr>
+    <tr>
+      <td>
+        <code>enableButtons(<em>string</em> name)</code>
+      </td>
+      <td>通过<code>name</code> 设置启用按钮。包括默认的 <code>buttons</code> 和 <code>additionalButtons</code> 。 设置为 <code>all</code>将启用全部的按钮</td>
+    </tr>
+    <tr>
+      <td>
+        <code>disableButtons(<em>string</em> name)</code>
+      </td>
+      <td>通过 <code>name</code> 禁用按钮。包括默认的 <code>buttons</code> 和 <code>additionalButtons</code> 。 设置为 <code>all</code> 会禁用所有的按钮。</td>
+    </tr>
+    <tr>
+      <td>
+        <code>showButtons(<em>string</em> name)</code>
+      </td>
+      <td>通过 <code>name</code> 设置显示按钮。包括 <code>buttons</code> 和 <code>additionalButtons</code> 。</td>
+    </tr>
+    <tr>
+      <td>
+        <code>hideButtons(<em>string</em> name)</code>
+      </td>
+      <td>通过 <code>name</code> 隐藏按钮。 包括<code>buttons</code> 和 <code>additionalButtons</code> 。</td>
+    </tr>
+
+  </tbody>
+</table>
+
+
+    <nav class="amp-pager">
+    </nav>
+  </div>
+</section>
+
+<footer class="amp-footer"><div class="am-g am-g-fixed"><div class="am-u-md-4 am-u-md-push-8"><ul class="amz-social"><li><a href="http://weibo.com/amazeui" title="云适配微博" target="_blank"><span class="am-icon-weibo"></span></a></li><li><a href="#am-wechat" title="云适配微信" data-am-modal><span class="am-icon-wechat"></span></a></li><li><a class="new-issue" href="https://github.com/amazeui/" target="_blank" title="联系我们"><span class="am-icon-paper-plane"></span></a></li></ul></div><div class="col-md-8 col-md-pull-4 am-u-md-8 am-u-md-pull-4"><h2 class="amz-fd"><a href="http://www.yunshipei.com" target="_blank">云适配</a></h2><ul class="amz-links"><li><a href="http://amazeui.org/about/wantu" class="am-icon-heart">&nbsp;妹子招亲</a> | <a href="http://amazeui.org/about/contact">联系我们</a></li></ul><p class="amz-cp">&copy; 2015~2016  AllMobilize, Inc. <a href="http://opensource.org/licenses/MIT" target="_blank">MIT license</a>. Developed with <a href="http://www.jetbrains.com/webstorm/" target="_blank">WebStorm</a>.</p></div></div></footer><div class="am-modal am-modal-no-btn" tabindex="-1" id="am-wechat"><div class="am-modal-dialog"><div class="am-modal-hd"><a href="" class="am-close am-close-spin" data-am-modal-close>&times;</a></div><div class="am-modal-bd"><img src="http://s.amazeui.org/assets/2.x/i/am/qr-ui.jpg" alt="Amaze UI 微信"/><br/>在微信上关注我们</div></div></div><div class="amp-toolbar" id="amp-toolbar"><a href="#top" title="回到顶部" class="am-icon-btn am-icon-arrow-up" id="amp-go-top"></a></div>
+<script src="http://s.amazeui.org/assets/plugin/js/app.min.js"></script>
+<script src="js/md.js"></script><script src="js/tomd.js"></script><script src="js/am-md.js"></script><script src="js/am-cus.js"></script><script src="js/am-btn.js"></script>
+<script>
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?b424d39312c46404f15e22574a531fbb";
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hm);
+  })();
+
+  (function(w, d, s) {
+    function gs(){
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(w , d, s ,'//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-34196034-8', 'amazeui.org');
+      ga('send', 'pageview');
+    }
+    if (w.addEventListener) { w.addEventListener('load', gs, false); }
+    else if (w.attachEvent) { w.attachEvent('onload',gs); }
+  }(window, document, 'script'));
+</script>
+</body>
+</html>
