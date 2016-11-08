@@ -38,6 +38,6 @@ npm install
 gulp markdoc
 ```
 
-# license
+### license: [MIT](https://opensource.org/licenses/MIT)
 
-[MIT](https://opensource.org/licenses/MIT)
+
