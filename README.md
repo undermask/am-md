@@ -2,7 +2,7 @@
 
 基于amazeui的markdown插件。
 
-[演示与文档请查看](https://undermask.github.io/am-md/)
+[演示与文档](https://undermask.github.io/am-md/)
 
 ## 使用
 
@@ -37,8 +37,6 @@ npm install
 ```
 gulp markdoc
 ```
-
-## 邮件 liaxqw@gmail.com
 
 # license
 
