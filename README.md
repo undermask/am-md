@@ -2,7 +2,7 @@
 
 基于amazeui的markdown插件。
 
-演示与文档请查看： README-doc.html。 README.md 不再重复。
+[演示与文档请查看](https://undermask.github.io/am-md/)
 
 ## 使用
 
