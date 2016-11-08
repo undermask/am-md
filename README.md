@@ -32,7 +32,7 @@ UMD打包
 npm install
 ```
 
-文档生成：(注意路劲)
+文档生成
 
 ```
 gulp markdoc
@@ -42,4 +42,4 @@ gulp markdoc
 
 # license
 
-MIT： https://opensource.org/licenses/MIT
+[MIT](https://opensource.org/licenses/MIT)
